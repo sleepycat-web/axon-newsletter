@@ -10,7 +10,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 		
 export default function BackgroundBeamsDemo() {
-  let placeholders = ["Enter your emalpil"];
+  let placeholders = ["Enter your email"];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
