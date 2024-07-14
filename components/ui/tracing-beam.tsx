@@ -75,7 +75,7 @@ export const TracingBeam = ({
           }}
         ></motion.div>
         <svg
-          viewBox={`0 0 20 ${svgHeight}`}
+          viewBox={`0 0 20 1600`}
           width="20"
           height="100%"
           className="ml-4 block"
