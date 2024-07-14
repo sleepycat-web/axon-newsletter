@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -35,7 +34,7 @@ export const TracingBeam = ({
     return () => {
       window.removeEventListener("resize", updateSvgHeight);
     };
-  }, [children]); // Re-run effect if children change
+  }, [updateSvgHeight]); // Include updateSvgHeight in the dependency array
 
   useEffect(() => {
     // Ensure the height is updated once after initial render
