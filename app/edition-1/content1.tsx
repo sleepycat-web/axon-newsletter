@@ -17,7 +17,7 @@ const content1 = () => {
               alt="blog thumbnail"
               height="1000"
               width="1000"
-              className="rounded-lg  mb-10 object-cover"
+              className="rounded-lg  mb-5 object-cover"
             />
             <p>
               Vercel has recently unveiled their AI sdk kit, which is pretty
@@ -44,14 +44,14 @@ const content1 = () => {
               alt="blog thumbnail"
               height="1000"
               width="1000"
-              className="rounded-lg mb-10 object-cover"
+              className="rounded-lg mb-5 object-cover"
             />
             <Image
               src="/innovia-1/ssfr.jpg"
               alt="blog thumbnail"
               height="1000"
               width="1000"
-              className="rounded-lg mb-10 object-cover"
+              className="rounded-lg mb-5 object-cover"
             />
           </div>
         </div>

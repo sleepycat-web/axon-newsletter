@@ -11,7 +11,9 @@ export default function TracingBeamDemo() {
       {/* Only on Mobile */}
       <div className=" block md:hidden">
         <Header />
-        <Content1 />
+        <TracingBeam>
+          <Content1 />
+        </TracingBeam>
         <Footer />
       </div>
 
@@ -20,7 +22,7 @@ export default function TracingBeamDemo() {
         <Header />
 
         <TracingBeam>
-        <Content1 />
+          <Content1 />
         </TracingBeam>
 
         <Footer />
