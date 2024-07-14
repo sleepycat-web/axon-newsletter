@@ -18,10 +18,8 @@ export default function TracingBeamDemo() {
       {/* Only on Desktop */}
       <div className=" hidden md:block">
         <Header />
-
-        <TracingBeam>
-        <Content1 />
-        </TracingBeam>
+        {/* <Content1 />
+        <TracingBeam></TracingBeam> */}
 
         <Footer />
       </div>
