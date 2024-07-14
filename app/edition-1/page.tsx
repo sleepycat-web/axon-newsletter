@@ -10,7 +10,7 @@ import Footer from "../../components/ui/footer";
 
 export default function TracingBeamDemo() {
   return (
-    <div className=" w-full">
+    <div className="">
       <div className="navbar w-full ">
         <Link href="/" className="btn btn-ghost text-lg">
           <FontAwesomeIcon icon={faArrowLeft} />

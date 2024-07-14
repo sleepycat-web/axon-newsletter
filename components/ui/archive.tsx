@@ -12,26 +12,29 @@ const Archive: React.FC = () => {
       imgSrc: "/innovia-1/ssat.jpg",
       link: "/edition-1", // Add this line
     },
-    {
-      id: 2,
-      title: "Coming Soon",
-      category: "Edition 2",
-      description: "",
-      imgSrc: "https://dummyimage.com/1",
-      link: "", // Add this line
-    },
-    {
-      id: 3,
-      title: "Coming Soon",
-      category: "Edition 3",
-      description: "",
-      imgSrc: "https://dummyimage.com/1",
-      link: "", // Add this line
-    },
+    // {
+    //   id: 2,
+    //   title: "Coming Soon",
+    //   category: "Edition 2",
+    //   description: "",
+    //   imgSrc: "https://dummyimage.com/1",
+    //   link: "", // Add this line
+    // },
+    // {
+    //   id: 3,
+    //   title: "Coming Soon",
+    //   category: "Edition 3",
+    //   description: "",
+    //   imgSrc: "https://dummyimage.com/1",
+    //   link: "", // Add this line
+    // },
   ];
 
   return (
-    <section className="bg-neutral-950 font-poppins text-neutral-400 body-font">
+    <section className="bg-neutral-950 font-poppins text-neutral-400 body-font ">
+      
+      
+
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4">
           {items.map((item) => (
