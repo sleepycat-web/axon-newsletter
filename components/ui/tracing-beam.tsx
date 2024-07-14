@@ -1,12 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useVelocity,
-  useSpring,
-} from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TracingBeam = ({
@@ -17,18 +11,36 @@ export const TracingBeam = ({
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [svgHeight, setSvgHeight] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [svgHeight, setSvgHeight] = useState(0);
+  // Function to update the SVG height
+  const updateSvgHeight = () => {
+    if (contentRef.current) {
+      const height = contentRef.current.offsetHeight;
+      if (height !== svgHeight) {
+        setSvgHeight(height);
+      }
+    }
+  };
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
-    }
+    updateSvgHeight();
+    window.addEventListener("resize", updateSvgHeight);
+    return () => {
+      window.removeEventListener("resize", updateSvgHeight);
+    };
+  }, [children]); // Re-run effect if children change
+
+  useEffect(() => {
+    // Ensure the height is updated once after initial render
+    const timer = setTimeout(updateSvgHeight, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const y1 = useSpring(
@@ -39,7 +51,7 @@ export const TracingBeam = ({
     }
   );
   const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, svgHeight -200]),
+    useTransform(scrollYProgress, [0, 1], [0, svgHeight - 200]),
     {
       stiffness: 500,
       damping: 90,
@@ -49,7 +61,7 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto ", className)}
+      className={cn("relative w-full max-w-4xl mx-auto", className)}
     >
       <div className="absolute -left-4 md:-left-20 top-3">
         <motion.div
@@ -68,7 +80,7 @@ export const TracingBeam = ({
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
           height={svgHeight} // Set the SVG height
-          className=" ml-4 block"
+          className="ml-4 block"
           aria-hidden="true"
         >
           <motion.path

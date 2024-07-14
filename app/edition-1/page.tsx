@@ -8,11 +8,23 @@ import Footer from "../../components/ui/footer";
 export default function TracingBeamDemo() {
   return (
     <div className="bg-neutral-950">
+      {/* Only on Mobile */}
+      <div className=" block md:hidden">
+        <Header />
+        <Content1 />
+        <Footer />
+      </div>
+
       {/* Only on Desktop */}
-      <Header />
-      <Content1 />
-      <Footer />
-     
+      <div className=" hidden md:block">
+        <Header />
+
+        <TracingBeam>
+        <Content1 />
+        </TracingBeam>
+
+        <Footer />
+      </div>
     </div>
   );
 }

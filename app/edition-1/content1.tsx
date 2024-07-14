@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 const content1 = () => {
   return (
-    <div className="bg-neutral-950 block  font-poppins ">
+    <div className="bg-neutral-950 font-poppins ">
       <div className="max-w-2xl mx-auto antialiased px-6 pt-4 relative">
         <div className="mb-10">
           <p className={twMerge("text-xl mb-4")}>
