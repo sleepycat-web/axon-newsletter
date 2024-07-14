@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -18,15 +18,14 @@ export const TracingBeam = ({
     offset: ["start start", "end start"],
   });
 
-  // Function to update the SVG height
-  const updateSvgHeight = () => {
+  const updateSvgHeight = useCallback(() => {
     if (contentRef.current) {
       const height = contentRef.current.offsetHeight;
       if (height !== svgHeight) {
         setSvgHeight(height);
       }
     }
-  };
+  }, [svgHeight]);
 
   useEffect(() => {
     updateSvgHeight();
@@ -34,13 +33,12 @@ export const TracingBeam = ({
     return () => {
       window.removeEventListener("resize", updateSvgHeight);
     };
-  }, [updateSvgHeight]); // Include updateSvgHeight in the dependency array
+  }, [updateSvgHeight]);
 
   useEffect(() => {
-    // Ensure the height is updated once after initial render
     const timer = setTimeout(updateSvgHeight, 100);
     return () => clearTimeout(timer);
-  }, []);
+  }, [updateSvgHeight]);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.5], [0, svgHeight]),
@@ -107,8 +105,8 @@ export const TracingBeam = ({
               gradientUnits="userSpaceOnUse"
               x1="0"
               x2="0"
-              y1={y1} // set y1 for gradient
-              y2={y2} // set y2 for gradient
+              y1={y1}
+              y2={y2}
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>
               <stop stopColor="#18CCFC"></stop>
