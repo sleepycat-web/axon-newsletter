@@ -96,7 +96,7 @@ export default function TracingBeamDemo() {
           </div>
         </div>
       </div>
-      <TracingBeam> </TracingBeam>
+      {/* <TracingBeam> </TracingBeam> */}
       <Footer />
     </div>
   );
