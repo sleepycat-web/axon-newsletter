@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
-const Content1 = () => {
+const content1 = () => {
   return (
-    <div className="bg-neutral-950 block font-poppins ">
+    <div className="bg-neutral-950 block  font-poppins ">
       <div className="max-w-2xl mx-auto antialiased px-6 pt-4 relative">
         <div className="mb-10">
           <p className={twMerge("text-xl mb-4")}>
@@ -86,8 +86,10 @@ const Content1 = () => {
           </div>
         </div>
       </div>
+
+     
     </div>
   );
 }
 
-export default Content1
+export default content1
