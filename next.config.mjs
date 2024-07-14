@@ -9,7 +9,16 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["dummyimage.com", "images.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "dummyimage.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
 };
 

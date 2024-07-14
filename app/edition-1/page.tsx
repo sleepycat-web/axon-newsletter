@@ -12,7 +12,7 @@ export default function TracingBeamDemo() {
   return (
     <div>
       {/* Only on Desktop */}
-      <div className="bg-neutral-950 hidden md:block font-poppins ">
+      <div className="bg-neutral-950 h-lvh hidden md:block font-poppins ">
         <div className="navbar w-full ">
           <Link href="/" className="btn btn-ghost text-lg">
             <FontAwesomeIcon icon={faArrowLeft} />
