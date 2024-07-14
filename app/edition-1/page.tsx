@@ -19,11 +19,11 @@ export default function TracingBeamDemo() {
       <div className=" hidden md:block">
         <Header />
        
-        <TracingBeam>
+        {/* <TracingBeam> */}
 
           <Content1 />
 
-        </TracingBeam>
+        {/* </TracingBeam> */}
 
         <Footer />
       </div>

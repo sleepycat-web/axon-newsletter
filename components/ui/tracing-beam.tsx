@@ -1,5 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useTransform, useScroll, useSpring } from "framer-motion";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useVelocity,
+  useSpring,
+} from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TracingBeam = ({
@@ -10,35 +17,36 @@ export const TracingBeam = ({
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [svgHeight, setSvgHeight] = useState(0);
+
   useEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.scrollHeight);
+    if (contentRef.current) {
+      setSvgHeight(contentRef.current.offsetHeight);
     }
   }, []);
 
-  const y1 = useSpring(useTransform(scrollYProgress, [0, 0.8], [50, height]), {
-    stiffness: 500,
-    damping: 90,
-  });
-  const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [50, height - 200]),
+  const y1 = useSpring(
+    useTransform(scrollYProgress, [0, 0.6], [0, 1600]),
     {
       stiffness: 500,
       damping: 90,
     }
   );
+  const y2 = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1600]), {
+    stiffness: 500,
+    damping: 90,
+  });
 
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto", className)}
+      className={cn("relative w-full max-w-4xl mx-auto ", className)}
     >
       <div className="absolute -left-4 md:-left-20 top-3">
         <motion.div
@@ -52,31 +60,16 @@ export const TracingBeam = ({
                 ? "none"
                 : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
-          className="ml-[27px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
-        >
-          <motion.div
-            transition={{
-              duration: 0.2,
-              delay: 0.5,
-            }}
-            animate={{
-              backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
-              borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
-            }}
-            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
-          />
-        </motion.div>
+        ></motion.div>
         <svg
-          viewBox={`0 0 20 ${height}`}
+          viewBox={`0 0 20 1600`}
           width="20"
-          height={height}
-          className="ml-4 block"
+          height={1600} // Set the SVG height
+          className=" ml-4 block"
           aria-hidden="true"
         >
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${height * 0.8} l -18 24V ${height}`}
+            d={`M 1 0V -36 l 18 24 V ${1600 * 0.5} l -18 24V ${1600}`}
             fill="none"
             stroke="#9091A0"
             strokeOpacity="0.16"
@@ -85,7 +78,7 @@ export const TracingBeam = ({
             }}
           ></motion.path>
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${height * 0.8} l -18 24V ${height}`}
+            d={`M 1 0V -36 l 18 24 V ${1600 * 0.5} l -18 24V ${1600}`}
             fill="none"
             stroke="url(#gradient)"
             strokeWidth="1.25"
@@ -100,18 +93,18 @@ export const TracingBeam = ({
               gradientUnits="userSpaceOnUse"
               x1="0"
               x2="0"
-              y1={y1}
-              y2={y2}
+              y1={y1} // set y1 for gradient
+              y2={y2} // set y2 for gradient
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>
               <stop stopColor="#18CCFC"></stop>
-              <stop offset="0.325" stopColor="#6344F5"></stop>
+              <stop offset="0.425" stopColor="#6344F5"></stop>
               <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
             </motion.linearGradient>
           </defs>
         </svg>
       </div>
-      <div>{children}</div>
+      <div ref={contentRef}>{children}</div>
     </motion.div>
   );
 };
