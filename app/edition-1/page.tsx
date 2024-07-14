@@ -12,13 +12,13 @@ export default function TracingBeamDemo() {
   return (
     <div>
       {/* Only on Desktop */}
-      <div className="bg-neutral-950 h-lvh hidden md:block font-poppins ">
+      <div className="bg-neutral-950 h-100% hidden md:block font-poppins ">
         <div className="navbar w-full ">
           <Link href="/" className="btn btn-ghost text-lg">
             <FontAwesomeIcon icon={faArrowLeft} />
           </Link>
         </div>
-        <TracingBeam>
+        <TracingBeam className="h-100%">
           <div className="max-w-2xl mx-auto antialiased px-6 pt-4 relative">
             <div className="mb-10">
               <p className={twMerge("text-xl mb-4")}>
