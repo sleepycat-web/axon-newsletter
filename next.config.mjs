@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ["dummyimage.com", "images.unsplash.com"],
+  },
 };
 
 export default nextConfig;

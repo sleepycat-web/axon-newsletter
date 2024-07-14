@@ -8,7 +8,7 @@ export default function Page() {
 return (
   <div className="bg-neutral-950 ">
     <div className="navbar w-full ">
-      <Link href="/" className="btn btn-ghost text-xl">
+      <Link href="/" className="btn btn-ghost text-lg">
         <FontAwesomeIcon icon={faArrowLeft} />
       </Link>
     </div>
