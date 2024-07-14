@@ -33,7 +33,6 @@ const Archive: React.FC = () => {
   return (
     <section className="bg-neutral-950 font-poppins text-neutral-400 body-font ">
       <div className="container px-5 py-24 mx-auto">
-
         <div className="lg:w-1/2 w-full mb-6 ">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
             Archive
@@ -85,6 +84,11 @@ const Archive: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="flex justify-center items-center">
+        <div className="join">
+          <button className="join-item btn btn-sm bg-neutral-900 text-neutral-300 hover:bg-neutral-800 btn-active">1</button>
         </div>
       </div>
     </section>
