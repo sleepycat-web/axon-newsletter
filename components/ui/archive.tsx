@@ -12,6 +12,15 @@ const Archive: React.FC = () => {
       imgSrc: "/innovia-1/ssat.jpg",
       link: "/edition-1", // Add this line
     },
+    {
+      id: 2,
+      title: "Superintelligence",
+      category: "Edition 2",
+      description:
+        "Explore OpenAI's roadmap to superintelligence and transformative AI preparedness framework. ",
+      imgSrc: "/innovia-2/rbt.jpg",
+      link: "/edition-2", // Add this line
+    },
     // {
     //   id: 2,
     //   title: "Coming Soon",

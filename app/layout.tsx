@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="font-poppins" lang="en">
       <link rel="canonical" href="https://grow.axonstudio.tech/" key="canonical" />
       <body className={inter.className}>{children}</body>
     </html>

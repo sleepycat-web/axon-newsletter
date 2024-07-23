@@ -12,7 +12,7 @@ const content1 = () => {
           <p className={twMerge("text-xl mb-4")}>
             Ever heard of Generative UI?
           </p>
-          <div className="text-sm prose-sm prose-invert space-y-2.5">
+          <div className="text-sm prose-sm prose-invert space-y-4">
             <Image
               src="/innovia-1/ssat.jpg"
               alt="blog thumbnail"
@@ -35,11 +35,6 @@ const content1 = () => {
               And honestly, the results are quite good, with some minor tweaks
               they can definitely be used in production.
             </p>
-          </div>
-        </div>
-
-        <div className="mb-10">
-          <div className="text-sm prose-sm prose-invert">
             <Image
               src="/innovia-1/sshr.jpg"
               alt="blog thumbnail"
@@ -52,16 +47,11 @@ const content1 = () => {
               alt="blog thumbnail"
               height="1000"
               width="1000"
-              className="rounded-lg mb-5 object-cover"
+              className="rounded-lg object-cover"
             />
-          </div>
-        </div>
-
-        <div className="mb-10">
-          <p className={twMerge("text-xl mb-4")}>
-            What does this mean for UI/UX designers?
-          </p>
-          <div className="text-sm prose-sm prose-invert space-y-2.5">
+            <p className={twMerge("text-xl mb-4")}>
+              What does this mean for UI/UX designers?
+            </p>
             <p>
               Well, this shift will drive a focus on outcome-oriented design,
               where designers prioritize user goals and set constraints for AI
@@ -86,9 +76,8 @@ const content1 = () => {
             </p>
           </div>
         </div>
-      </div>
 
-     
+      </div>
     </div>
   );
 }
