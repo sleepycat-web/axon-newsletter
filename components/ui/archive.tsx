@@ -6,7 +6,7 @@ const Archive: React.FC = () => {
     {
       id: 1,
       title: "Generative UI",
-      category: "Edition 1",
+      category: "Edition 1 (14 July 2024)",
       description:
         "Learn about Vercel's Generative UI and how it will shift the focus to outcome-oriented design. ",
       imgSrc: "/innovia-1/ssat.jpg",
@@ -15,12 +15,22 @@ const Archive: React.FC = () => {
     {
       id: 2,
       title: "Superintelligence",
-      category: "Edition 2",
+      category: "Edition 2 (23 July 2024)",
       description:
         "Explore OpenAI's roadmap to superintelligence and transformative AI preparedness framework. ",
       imgSrc: "/innovia-2/rbt.jpg",
       link: "/edition-2", // Add this line
     },
+    {
+      id: 3,
+      title: "Search GPT and Llama 3.1",
+      category: "Edition 3 (30 July 2024)",
+      description:
+        "Read about the game changing updates dropped by OpenAI and Meta. ",
+      imgSrc: "/innovia-3/aimg.jpg",
+      link: "/edition-3", // Add this line
+    },
+    
     // {
     //   id: 2,
     //   title: "Coming Soon",
