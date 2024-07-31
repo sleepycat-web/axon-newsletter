@@ -12,7 +12,8 @@ export default async function handler(
       return res.status(400).json({ message: "valueSub is required" });
     }
 
-    const formattedTimestamp = new Date().toLocaleString("en-IN", {
+    const istOptions = {
+      timeZone: "Asia/Kolkata",
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -20,7 +21,9 @@ export default async function handler(
       minute: "2-digit",
       second: "2-digit",
       hour12: true,
-    });
+    } as const;
+
+    const formattedTimestamp = new Date().toLocaleString("en-IN", istOptions);
 
     console.log("Received request at", formattedTimestamp);
 
