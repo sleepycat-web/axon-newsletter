@@ -162,13 +162,17 @@ export function PlaceholdersAndVanishInput({
     }, 5000);
   };
 
+   const sanitizeEmailInput = (input: string): string => {
+     return input.replace(/[^a-zA-Z0-9@.]/g, "");
+  };
+  
  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
    e.preventDefault();
 vanishAndSubmit();
    const valueSub = inputRef.current?.value || "";
 
    try {
-     const res = await fetch("api/submitForm", {
+     const res = await fetch("api/submitNewsletter", {
        method: "POST",
        headers: {
          "Content-Type": "application/json",
@@ -188,8 +192,7 @@ vanishAndSubmit();
    
    // Pass the captured value to the onSubmit callback if it exists
    onSubmit && onSubmit(e, valueSub);
-   console.log(`Submitted: ${valueSub}`);
- };
+  };
 
   return (
     <form
@@ -208,8 +211,13 @@ vanishAndSubmit();
       <input
         onChange={(e) => {
           if (!animating) {
-            setValue(e.target.value);
-            onChange && onChange(e);
+            const sanitized = sanitizeEmailInput(e.target.value);
+            setValue(sanitized);
+            onChange &&
+              onChange({
+                ...e,
+                target: { ...e.target, value: sanitized },
+              } as React.ChangeEvent<HTMLInputElement>);
           }
         }}
         onKeyDown={handleKeyDown}
