@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Image from 'next/image';
+import Image from "next/image";
 const Footer = () => {
   return (
     <footer className=" footer grid grid-flow-col bg-neutral-950 p-6 py-8 gap-4 text-neutral-content">
       <aside>
-        <a href="https://axonstudio.tech/" rel="noopener noreferrer">
+        <a href="https://axonstudio.in/" rel="noopener noreferrer">
           <Image
             className="h-12 w-auto"
             src="/logo.png"
@@ -62,6 +62,6 @@ const Footer = () => {
       </nav>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

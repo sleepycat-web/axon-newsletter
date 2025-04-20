@@ -23,7 +23,7 @@ export default function RootLayout({
       <meta name="robots" content="noindex" />
       <link
         rel="canonical"
-        href="https://grow.axonstudio.tech/privacy"
+        href="https://grow.axonstudio.in/privacy"
         key="canonical"
       />
       <body className={inter.className}>{children}</body>

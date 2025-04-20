@@ -7,7 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Innovia",
   description: "Your weekly scoop of tech innovations, trends and insights.",
-  
 };
 
 export default function RootLayout({
@@ -17,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html className="font-poppins" lang="en">
-      <link rel="canonical" href="https://grow.axonstudio.tech/" key="canonical" />
+      <link
+        rel="canonical"
+        href="https://grow.axonstudio.in/"
+        key="canonical"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );
