@@ -8,7 +8,7 @@ const content2 = () => {
     <div className="bg-neutral-950 font-poppins">
       <div className="max-w-2xl mx-auto antialiased px-6 pt-4 relative">
         <div className="mb-10">
-          <p className="text-xl mb-4">SuperIntelligence is here!! </p>
+          <h1 className="text-xl mb-4">SuperIntelligence is here!! </h1>
 
           <div className="text-sm prose-sm prose-invert space-y-4">
             <p>
@@ -20,12 +20,12 @@ const content2 = () => {
 
             <Image
               src="/innovia-2/rbt.jpg"
-              alt="blog thumbnail"
+              alt="Illustration of a humanoid robot head with glowing red eyes"
               height="1000"
               width="1000"
               className="rounded-lg mb-8 object-fill"
             />
-            <p className="text-xl">What does it do? </p>
+            <h2 className="text-xl">What does it do? </h2>
             <p>
               So this framework aims to evaluate AI systems across 12 key
               capabilities on a five-level scale, ranging from chatbots to
@@ -33,7 +33,7 @@ const content2 = () => {
             </p>
             <Image
               src="/innovia-2/rt.jpg"
-              alt="blog thumbnail"
+              alt="Table of OpenAI's five stages of artificial intelligence, from chatbots to organizations"
               height="1000"
               width="1000"
               className="rounded-lg mb-5 object-cover"

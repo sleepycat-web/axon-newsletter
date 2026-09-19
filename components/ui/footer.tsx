@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 const Footer = () => {
@@ -14,7 +12,7 @@ const Footer = () => {
           <Image
             className="h-12 w-auto"
             src="/logo.png"
-            alt="Logo"
+            alt="Axon Studio logo"
             width={65}
             height={40}
           />
@@ -31,32 +29,18 @@ const Footer = () => {
       <nav className="grid grid-flow-col justify-self-end ">
         <div className="grid grid-flow-col gap-4 p-2">
           <a
-            href="https://www.instagram.com/web_axon/"
+            href="https://www.instagram.com/theaxonstudio/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faInstagram} size="xl" />
           </a>
           <a
-            href="https://www.facebook.com/people/Axon-Studio/61557992653296/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faFacebookF} size="xl" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/axon-web"
+            href="https://www.linkedin.com/company/the-axon-studio/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLinkedin} size="xl" />
-          </a>
-          <a
-            href="https://twitter.com/WebAxon"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faTwitter} size="xl" />
           </a>
         </div>
       </nav>

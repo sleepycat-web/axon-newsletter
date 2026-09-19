@@ -1,61 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import { editions } from "../../lib/editions";
 
 const Archive: React.FC = () => {
-  const items = [
-    {
-      id: 1,
-      title: "Generative UI",
-      category: "Edition 1 (14 July 2024)",
-      description:
-        "Learn about Vercel's Generative UI and how it will shift the focus to outcome-oriented design. ",
-      imgSrc: "/innovia-1/ssat.jpg",
-      link: "/edition-1", // Add this line
-    },
-    {
-      id: 2,
-      title: "Superintelligence",
-      category: "Edition 2 (23 July 2024)",
-      description:
-        "Explore OpenAI's roadmap to superintelligence and transformative AI preparedness framework. ",
-      imgSrc: "/innovia-2/rbt.jpg",
-      link: "/edition-2", // Add this line
-    },
-    {
-      id: 3,
-      title: "Search GPT and Llama 3.1",
-      category: "Edition 3 (30 July 2024)",
-      description:
-        "Read about the game changing updates dropped by OpenAI and Meta. ",
-      imgSrc: "/innovia-3/aimg.jpg",
-      link: "/edition-3", // Add this line
-    },
-    
-    // {
-    //   id: 2,
-    //   title: "Coming Soon",
-    //   category: "Edition 2",
-    //   description: "",
-    //   imgSrc: "https://dummyimage.com/1",
-    //   link: "", // Add this line
-    // },
-    // {
-    //   id: 3,
-    //   title: "Coming Soon",
-    //   category: "Edition 3",
-    //   description: "",
-    //   imgSrc: "https://dummyimage.com/1",
-    //   link: "", // Add this line
-    // },
-  ];
+  const items = editions.map((edition) => ({
+    id: edition.number,
+    title: edition.title,
+    category: `Edition ${edition.number} (${new Date(
+      edition.datePublished
+    ).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })})`,
+    description: edition.summary,
+    imgSrc: edition.image,
+    imgAlt: edition.imageAlt,
+    link: `/${edition.slug}`,
+  }));
 
   return (
     <section className="bg-neutral-950 font-poppins  text-neutral-400 body-font ">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-1/2 w-full mb-6 ">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
+          <h2 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
             Archive
-          </h1>
+          </h2>
           <div className="h-1 w-20 bg-neutral-500 rounded"></div>
         </div>
 
@@ -66,17 +36,17 @@ const Archive: React.FC = () => {
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src={item.imgSrc}
-                  alt="blog"
+                  alt={item.imgAlt}
                   width={720}
                   height={400}
                 />
                 <div className="p-6">
-                  <h2 className="tracking-widest text-xs title-font font-medium text-neutral-500 mb-1">
+                  <p className="tracking-widest text-xs title-font font-medium text-neutral-500 mb-1">
                     {item.category}
-                  </h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
+                  </p>
+                  <h3 className="title-font text-lg font-medium text-white mb-3">
                     {item.title}
-                  </h1>
+                  </h3>
                   <p className="leading-relaxed mb-3">{item.description}</p>
                   <div className="flex items-center flex-wrap ">
                     {item.link && (

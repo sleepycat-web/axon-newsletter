@@ -8,7 +8,7 @@ const content2 = () => {
     <div className="bg-neutral-950 font-poppins">
       <div className="max-w-2xl mx-auto antialiased px-6 pt-4 relative">
         <div className="mb-10">
-          <p className="text-xl mb-4">Two big updates!!</p>
+          <h1 className="text-xl mb-4">Two big updates!!</h1>
 
           <div className="text-sm prose-sm prose-invert space-y-4">
             <p>
@@ -19,12 +19,12 @@ const content2 = () => {
 
             <Image
               src="/innovia-3/aimg.jpg"
-              alt="blog thumbnail"
+              alt="Illustration of a businessman facing a humanoid AI"
               height="1000"
               width="1000"
               className="rounded-lg mb-8 object-fill"
             />
-            <p className="text-xl">Search GPT is in the making.</p>
+            <h2 className="text-xl">Search GPT is in the making.</h2>
             <p>Open AI might just have cooked a billion dollar company.</p>
             <p>
               This week, they unveiled Search GPT, a prototype AI search feature
@@ -54,7 +54,7 @@ const content2 = () => {
               integrate Search GPT into ChatGPT.
             </p>
 
-            <p className="text-xl ">Open Source is taking over AI.</p>
+            <h2 className="text-xl ">Open Source is taking over AI.</h2>
 
             <p>
               It&apos;s finally happened, open source is taking over OpenAI.
